@@ -1,5 +1,9 @@
 
 let figuraAtributos = document.querySelector('#figure');
+let contenedorImg = document.querySelector('#mainImage');
+const listaImg = ['img/imagen.jpg', 'img/imagen2.jpg','img/imagen3.jpg'];
+let indexImg = 0;
+
 
 
 function cambiarColor(){
@@ -25,7 +29,32 @@ function elegirFigura(){
     }  
 }
 
+function cambiarImg(){
+    if (indexImg < 2) {
+        indexImg++;
+    }else{
+        indexImg = 0;
+    }
+
+    const nuevaImg = listaImg[indexImg];
+    contenedorImg.setAttribute('src', nuevaImg);
+}
+
+
+function cambiarImgAnterior(){
+    if (indexImg > 0) {
+        indexImg--;
+    }else{
+        indexImg = 2;
+    }
+
+    const nuevaImg = listaImg[indexImg];
+    contenedorImg.setAttribute('src', nuevaImg);
+}
+
 
 
 document.querySelector('#btnHexColor').addEventListener('click', cambiarColor);
 document.querySelector('#btnChooseFigure').addEventListener('click', elegirFigura);
+document.querySelector('#btnChangeImageNext').addEventListener('click', cambiarImg);
+document.querySelector('#btnChangeImagePrev').addEventListener('click', cambiarImgAnterior);
