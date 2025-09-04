@@ -30,8 +30,14 @@ function animacion(){
     figura.style.backgroundColor = 'grey';
 }
 
+function moverArriba(){
+    figura.style.transform = 'translateY(-50px)';
+    figura.style.backgroundColor = 'purple';
+}
+
 
 document.getElementById('btnCircle').addEventListener('click', circulo);
 document.getElementById('btnStar').addEventListener('click', estrella);
 document.getElementById('btnGif').addEventListener('click', fondoGif);
 document.getElementById('btnAnim').addEventListener('click', animacion);
+document.getElementById('btnMoveUp').addEventListener('click', moverArriba);
