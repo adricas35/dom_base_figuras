@@ -2,6 +2,7 @@
 let titulo = document.querySelector('#mainTitle');
 let parrafo = document.querySelector('#mainParagraph');
 const agregarParrafo = document.querySelector('#extraParagraphs');
+const eliminarParrafo = document.querySelector('#btnRemoveParagraph')
 
 
 function cambiarTitulo(){
@@ -22,10 +23,18 @@ function adicionarParrafo(){
     agregarParrafo.appendChild(nuevoParrafo);
 }
 
+function eliminarUltipoP(){
+    const nuevoParrafo = document.querySelector('#newP');
+    if (nuevoParrafo) {
+        agregarParrafo.removeChild(nuevoParrafo);   
+    }
+}
+
 
 
 
 document.querySelector('#btnChangeTitle').addEventListener('click', cambiarTitulo);
 document.querySelector('#btnChangeParagraph').addEventListener('click', cambiarParrafo);
 document.querySelector('#btnAddParagraph').addEventListener('click', adicionarParrafo);
+document.querySelector('#btnRemoveParagraph').addEventListener('click',eliminarUltipoP);
 
