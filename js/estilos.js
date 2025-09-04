@@ -2,9 +2,6 @@
 //Variable global
 let figura = document.getElementById('figure');
 
-//Variables para la function animación
-let angulo = 0;
-const velocidad = 1;
 
 
 function circulo() {
@@ -24,10 +21,8 @@ function fondoGif(){
 }
 
 function animacion(){
-    angulo = (angulo + velocidad) % 360; 
-    figura.style.transform = `rotate(${angulo}deg)`;
-    requestAnimationFrame(animacion); 
-    figura.style.backgroundColor = 'grey';
+    figura.style.animation ='rotar 3s linear infinite';
+    figura.style.background = 'purple';
 }
 
 function moverArriba(){
