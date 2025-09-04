@@ -52,9 +52,16 @@ function cambiarImgAnterior(){
     contenedorImg.setAttribute('src', nuevaImg);
 }
 
+function mostrarOcultar(){
+  contenedorImg.classList.toggle('oculto');
+}
+
+
+
 
 
 document.querySelector('#btnHexColor').addEventListener('click', cambiarColor);
 document.querySelector('#btnChooseFigure').addEventListener('click', elegirFigura);
 document.querySelector('#btnChangeImageNext').addEventListener('click', cambiarImg);
 document.querySelector('#btnChangeImagePrev').addEventListener('click', cambiarImgAnterior);
+document.querySelector('#btnToggleImage').addEventListener('click', mostrarOcultar);
