@@ -1,4 +1,10 @@
+
+//Variable global
 let figura = document.getElementById('figure');
+
+//Variables para la function animación
+let angulo = 0;
+const velocidad = 1;
 
 
 function circulo() {
@@ -17,7 +23,15 @@ function fondoGif(){
     figura.style.backgroundRepeat= 'no-repeat';
 }
 
+function animacion(){
+    angulo = (angulo + velocidad) % 360; 
+    figura.style.transform = `rotate(${angulo}deg)`;
+    requestAnimationFrame(animacion); 
+    figura.style.backgroundColor = 'grey';
+}
+
 
 document.getElementById('btnCircle').addEventListener('click', circulo);
 document.getElementById('btnStar').addEventListener('click', estrella);
 document.getElementById('btnGif').addEventListener('click', fondoGif);
+document.getElementById('btnAnim').addEventListener('click', animacion);
