@@ -40,6 +40,11 @@ function moverAbajo(){
     figura.style.backgroundColor = 'violet';
 }
 
+function moverIzq(){
+    figura.style.transform = 'translateX(-50px)';
+    figura.style.backgroundColor = 'yellow';
+}
+
 
 document.getElementById('btnCircle').addEventListener('click', circulo);
 document.getElementById('btnStar').addEventListener('click', estrella);
@@ -47,3 +52,4 @@ document.getElementById('btnGif').addEventListener('click', fondoGif);
 document.getElementById('btnAnim').addEventListener('click', animacion);
 document.getElementById('btnMoveUp').addEventListener('click', moverArriba);
 document.getElementById('btnMoveDown').addEventListener('click', moverAbajo);
+document.getElementById('btnMoveLeft').addEventListener('click', moverIzq );
