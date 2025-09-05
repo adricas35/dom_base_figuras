@@ -7,6 +7,7 @@ const url = document.querySelector('#mainLink');
 
 
 
+
 function cambiarColor(){
     const colorFigura = prompt('Ingrese su nuevo color en #HEX');
     figuraAtributos.style.backgroundColor= colorFigura;
@@ -67,10 +68,14 @@ function cambiarEnlace(){
     url.setAttribute('href', nuevaUrl);
 }
 
+function abrirPestaña(){
+    url.setAttribute('target', '_blank');
+    url.setAttribute('href', 'https://github.com/adricas35');
+}
 
-
-
-
+function deshabilitarEnlace(){
+    url.removeAttribute('href');
+}
 
 
 
@@ -81,3 +86,5 @@ document.querySelector('#btnChangeImagePrev').addEventListener('click', cambiarI
 document.querySelector('#btnToggleImage').addEventListener('click', mostrarOcultar);
 document.querySelector('#btnChangeAlt').addEventListener('click', cambiarAtributo);
 document.querySelector('#btnChangeLink').addEventListener('click', cambiarEnlace);
+document.querySelector('#btnOpenLink').addEventListener('click', abrirPestaña);
+document.querySelector('#btnDisableLink').addEventListener('click', deshabilitarEnlace);
