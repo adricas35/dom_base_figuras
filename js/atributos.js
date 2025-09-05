@@ -1,8 +1,9 @@
 
 let figuraAtributos = document.querySelector('#figure');
-let contenedorImg = document.querySelector('#mainImage');
+let imagen = document.querySelector('#mainImage');
 const listaImg = ['img/imagen.jpg', 'img/imagen2.jpg','img/imagen3.jpg'];
 let indexImg = 0;
+const url = document.querySelector('#mainLink');
 
 
 
@@ -37,7 +38,7 @@ function cambiarImg(){
     }
 
     const nuevaImg = listaImg[indexImg];
-    contenedorImg.setAttribute('src', nuevaImg);
+    imagen.setAttribute('src', nuevaImg);
 }
 
 
@@ -49,12 +50,25 @@ function cambiarImgAnterior(){
     }
 
     const nuevaImg = listaImg[indexImg];
-    contenedorImg.setAttribute('src', nuevaImg);
+    imagen.setAttribute('src', nuevaImg);
 }
 
 function mostrarOcultar(){
-  contenedorImg.classList.toggle('oculto');
+  imagen.classList.toggle('oculto');
 }
+
+function cambiarAtributo(){
+    const nuevoTextoAlt = prompt('Ingresa el nuevo texto alternativo para la imagen:');
+    imagen.setAttribute('alt', nuevoTextoAlt);
+}
+
+function cambiarEnlace(){
+    let nuevaUrl = prompt('Ingresa la nueva URL');
+    url.setAttribute('href', nuevaUrl);
+}
+
+
+
 
 
 
@@ -65,3 +79,5 @@ document.querySelector('#btnChooseFigure').addEventListener('click', elegirFigur
 document.querySelector('#btnChangeImageNext').addEventListener('click', cambiarImg);
 document.querySelector('#btnChangeImagePrev').addEventListener('click', cambiarImgAnterior);
 document.querySelector('#btnToggleImage').addEventListener('click', mostrarOcultar);
+document.querySelector('#btnChangeAlt').addEventListener('click', cambiarAtributo);
+document.querySelector('#btnChangeLink').addEventListener('click', cambiarEnlace);
